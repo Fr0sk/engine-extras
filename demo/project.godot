@@ -10,6 +10,13 @@ config_version=5
 
 [application]
 
-config/name="godot cpp template"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/name="Engine Extras Demo Project"
+config/tags=PackedStringArray("c++")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/always_on_top=true
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true

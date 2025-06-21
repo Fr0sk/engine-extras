@@ -5,7 +5,7 @@ import sys
 from methods import print_error
 
 
-libname = "EXTENSION-NAME"
+libname = "engine_extras"
 projectdir = "demo"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
@@ -50,6 +50,9 @@ if env["target"] in ["editor", "template_debug"]:
 # .dev doesn't inhibit compatibility, so we don't need to key it.
 # .universal just means "compatible with all relevant arches" so we don't need to key it.
 suffix = env['suffix'].replace(".dev", "").replace(".universal", "")
+
+if env["platform"] == "windows":
+    env.Append(LIBS=["User32"])
 
 lib_filename = "{}{}{}{}".format(env.subst('$SHLIBPREFIX'), libname, suffix, env.subst('$SHLIBSUFFIX'))
 
