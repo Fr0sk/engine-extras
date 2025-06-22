@@ -96,7 +96,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: godot-cpp-template-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.float-precision }}-${{ matrix.target-type }}
+          name: engine-extras-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.float-precision }}-${{ matrix.target-type }}
           path: |
             ${{ github.workspace }}/bin/**
 
@@ -109,6 +109,6 @@ jobs:
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          name: godot-cpp-template
-          pattern: godot-cpp-template-*
+          name: engine-extras
+          pattern: engine-extras-*
           delete-merged: true
